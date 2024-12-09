@@ -39,3 +39,30 @@ const myFunction = function(){
 }
 
 console.log(typeof myFunction)
+
+
+// MEMORY
+
+// Stage and Heap
+
+//Primitive Data Types use Stage
+//Non-Primitive Data Types use Heap
+
+let myYoutubeName = "CodeWithAlyvia"
+let anotherYoutubeName = myYoutubeName
+anotherYoutubeName = "AlyviaCodes"
+
+console.log(myYoutubeName)
+console.log(anotherYoutubeName)
+
+let userOne = {
+    email : "userone@google.com",
+    upi : "userone@ybl"
+
+}
+
+let userTwo = userOne
+userTwo.email = "usertwo@google.com"
+
+console.log(userOne.email)
+console.log(userTwo.email)
