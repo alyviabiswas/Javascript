@@ -27,7 +27,7 @@ console.log(newDate)
 console.log(newDate.getDate())
 console.log(newDate.getDay())
 console.log(newDate.getHours())
-console.log(newDate.getFullYear()) //Why 16? The time rn is 22:16? Why only minutes?
+console.log(newDate.getFullYear())
 
 newDate.toLocaleString('default',{
     weekday: "long",
