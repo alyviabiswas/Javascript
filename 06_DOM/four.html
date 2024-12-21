@@ -30,6 +30,18 @@
 
 
     // EDITING VALUES
-    
+    const secondLang=document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML="Mojo" //Not Optimized
+    const newli=document.createElement('li')
+    newli.textContent="Mojo"
+    secondLang.replaceWith(newli)
+
+    //EDITING VALUES
+    const firstLang=document.querySelector("li:first-child")
+    firstLang.outerHTML="<li>TypeScript</li>"
+
+    //REMOVING OR DELETING VALUES
+    const lastLang=document.querySelector("li:last-child")
+    lastLang.remove()
 </script>
 </html>
