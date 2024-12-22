@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card with XMLHttpRequest</title>
+  <style>
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 50%;
+      max-width: 150px;
+    }
+    .card h2 {
+      margin: 12px 0;
+    }
+    .card p {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="userCard">
+    <img src="https://via.placeholder.com/150" alt="User Image" id="userImage">
+    <h2 id="userName">User Name</h2>
+    <p id="userFollowers">Followers: 0</p>
+  </div>
+
+  <script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const data = JSON.parse(this.responseText);
+        const followers = data.followers;
+        const avatar = data.avatar_url;
+        const name = data.name || "Unknown User"; 
+
+        document.getElementById('userImage').src = avatar;
+        document.getElementById('userName').textContent = name;
+        document.getElementById('userFollowers').textContent = `Followers: ${followers}`;
+      } else if (xhr.readyState === 4) {
+        console.error('Failed to fetch data:', xhr.statusText);
+      }
+    };
+    xhr.send();
+  </script>
+</body>
+</html>
