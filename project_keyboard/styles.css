@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff7eb3, #65c3ba, #8ec5fc);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    color: #ffffff;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#insert {
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#insert:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.key {
+    font-size: 2rem;
+    color: #f3eded;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+    transition: color 0.3s ease;
+}
+
+.key:hover {
+    color: #ffcc00;
+}
+
+@media (max-width: 600px) {
+    .key {
+        font-size: 1.5rem;
+    }
+
+    #insert {
+        padding: 15px;
+    }
+}
